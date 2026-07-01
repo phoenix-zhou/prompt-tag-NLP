@@ -1,3 +1,81 @@
+
+📚 Recommendation System - Text Tag Classification NLP
+--- 
+This project implements a complete iteration from traditional machine learning to BERT pre-trained models. By leveraging dynamic quantization and knowledge distillation techniques, it achieves extreme inference acceleration and model lightweighting while maintaining high accuracy (93.64%), making it perfectly suited for high-concurrency online recommendation scenarios.
+Download Link for the pytorch_model.bin model in the bert_pretrain folder: https://pan.baidu.com/s/18y5k6p976VLtnEZ1xtNXIQ?pwd=bpvh (Extraction Code: bpvh)
+## 📋 Table of Contents
+- Project Background
+- Core Features & Tech Stack
+- Model Evolution & Performance Metrics
+- Engineering Implementation: Compression & Acceleration
+- Project Achievements
+- Environment Dependencies
+
+--- 
+## 📖 Project Background
+In personalized recommendation systems, the precise distribution of massive amounts of short-text information is key to enhancing user experience. This project led the design and implementation of a Recommendation System - Intelligent Text Classification Engine, serving as a core upstream task for the recommendation system.
+- **Pain Point**: Short texts have sparse semantics and high noise levels, making it difficult for traditional keyword matching to meet the demands of precise distribution.
+- **Objective**: Automatically classify news and information into channels of user interest (e.g., History, Finance, Beauty, etc.).
+- **Value**: Significantly improves Click-Through Rate (CTR), subscription volume, and paid conversion rates.
+## 🛠️ Core Features & Tech Stack
+This project covers the entire workflow from data cleaning, feature engineering, and baseline model construction to deep learning iteration and model compression/deployment.
+### Tech Stack Overview
+- **Deep Learning Frameworks**: PyTorch, Transformers (HuggingFace)
+- **Pre-trained Models**: BERT (Base/Small)
+- **Classic Models**: TextCNN, FastText, Random Forest
+- **NLP Technologies**: Jieba Tokenization, TF-IDF, Tokenization, Padding, Masking
+- **Optimization Strategies**: AdamW, Cross Entropy Loss, Learning Rate Warmup
+- **Model Compression**: Dynamic Quantization (INT8), Knowledge Distillation
+---  
+## Model Evolution & Performance Metrics
+This project led the complete iteration path of the model from traditional machine learning to SOTA pre-trained models, achieving a leap in classification accuracy.
+
+| Stage | Model Architecture | Key Technologies | Accuracy |
+| :--- | :--- | :--- | :--- |
+| Baseline | Random Forest | TF-IDF Feature Extraction + Stop Word Filtering | 81.20% |
+| Iteration | FastText | N-gram Features + Automated Hyperparameter Tuning (Autotune) | 91.73% |
+| SOTA | BERT | Native PyTorch Implementation + In-depth Error Analysis (Badcase) | 93.64% |
+
+**Note**: The BERT model achieved the best business results by encapsulating a standardized data processing pipeline (DatasetIterater) and a complete training loop.
+--- 
+## ⚡ Engineering Implementation: Compression & Acceleration
+To address inference latency bottlenecks in high-concurrency online scenarios, this project led the model lightweighting initiative, achieving a "perfect balance between accuracy and performance."
+### 1. Dynamic Quantization
+Dynamic quantization was applied to the BERT model using torch.qint8.
+- **Effect**: The model file size was reduced by 256.6MB.
+- **Performance**: The F1-score was maintained at 91.92% (a minor drop of 1.72%).
+- **Benefit**: Significantly reduced GPU memory usage and improved inference throughput.
+### 2. Knowledge Distillation
+A BERT (Teacher) ➡️ TextCNN (Student) distillation scheme was designed and implemented.
+- **Compression Ratio**: The model size was compressed from 409.2MB to 23.1MB (a 17.7x reduction).
+- **Accuracy Retention**: The test set accuracy was maintained at 91.25% (a drop of only 2.39%).
+- **Conclusion**: Perfectly balances high accuracy with low latency, suitable for deployment in edge or ultra-fast response scenarios.
+---
+## 🏆 Project Achievements
+1. **Business Metric Improvement:**
+   - Successfully embedded the engine into the core pipeline of the recommendation system, enabling automated distribution of massive information.
+   - Effectively increased CTR, subscription volume, and paid conversion rates for target channels.
+2. **Technical Breakthroughs:**
+   - Solved the problems of difficult short-text classification and slow inference.
+   - Established a standardized NLP model training and compression pipeline, providing an engineering template for subsequent NLP tasks.
+## 💻 Environment Dependencies
+```
+python >= 3.8
+torch >= 1.10.0
+transformers >= 4.15.0
+scikit-learn
+jieba
+numpy
+pandas
+```
+---
+### 📄 License
+This project is for learning and communication purposes only.
+For detailed project steps, please refer to the blog post:
+```
+https://blog.csdn.net/zhoupenghui168/article/details/161697018
+```
+------------------------------------------------------------------------------------------
 推荐系统-文本标签分类NLP
 
 ---
@@ -90,7 +168,7 @@ bert_pretrain文件夹下面的pytorch_model.bin模型下载地址:  https://pan
 
 ## 💻 环境依赖
 
-```bash
+```
 python >= 3.8
 torch >= 1.10.0
 transformers >= 4.15.0
@@ -105,7 +183,8 @@ pandas
 ### 📄 License
 
 本项目仅供学习与交流使用。
-项目具体步骤见博客:https://blog.csdn.net/zhoupenghui168/article/details/161697018
-
+项目具体步骤见博客:
+```
+https://blog.csdn.net/zhoupenghui168/article/details/161697018
 ```
 
